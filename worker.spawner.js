@@ -19,7 +19,7 @@ var spawner = {
         console.log("energy count:" + Game.spawns['Spawn1'].energy)
         console.log("Should create harvester?:" + harvesters.length < (sources.length * 2) && Game.spawns['Spawn1'].energy >= 200)
         if (harvesters.length < (sources.length * 2) && Game.spawns['Spawn1'].energy >= 200) {
-            /*if (myRoom.memory.lastSource == null) {
+            if (myRoom.memory.lastSource == null) {
                 myRoom.memory.lastSource = 0;
             }
             else {
@@ -28,9 +28,9 @@ var spawner = {
                     myRoom.memory.lastSource = 0;
                 }
             }
-            //var currentSourceId = sources[myRoom.memory.lastSource].id;
+            var currentSourceId = sources[myRoom.memory.lastSource].id;
             Game.spawns['Spawn1'].createCreep([WORK, MOVE, CARRY], null , {role:"harvester", source: sources[myRoom.memory.lastSource].id});
-            */
+            
         }
         
         //only try to spawn other creeps when I have enough harvesters
