@@ -25,7 +25,7 @@ module.exports.loop = function () {
     }
 }
 
-Console.log("Test");
+console.log("Test");
 
 //run roles from modules
 function runRoles() {
