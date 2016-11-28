@@ -6,7 +6,7 @@ var spawner = require('worker.spawner');
 //This function is run every tick.
 module.exports.loop = function () {
     //need this to measure how much my script cost
-    var startCpu = Game.getUsedCpu();
+    var startCpu = Game.cpu.getUsed();
 
     //Log so I know things are happening
     console.log();
@@ -27,7 +27,7 @@ module.exports.loop = function () {
         Game.spawns['Spawn1'].room.controller.activateSafeMode
     }
 
-    console.log('CPU spent on Memory parsing:', Game.getUsedCpu() - startCpu);
+    console.log('CPU spent on Memory parsing:', Game.cpu.getUsed() - startCpu);
 }
 
 console.log("Test");
@@ -43,12 +43,4 @@ function runRoles() {
                 roleUpgrader.run(creep);
         }
     }
-}
-
-
-var usedOnStart = 0;
-usedOnStart = getUsedCpu();
-
-function getUsedCpu() {
-    return Game.rooms.sim ? performance.now() - usedOnStart : Game.getUsedCpu();
 }
