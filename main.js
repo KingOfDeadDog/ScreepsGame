@@ -27,7 +27,7 @@ module.exports.loop = function () {
         Game.spawns['Spawn1'].room.controller.activateSafeMode
     }
 
-    console.log('CPU spent on Memory parsing:', Game.cpu.getUsed() - startCpu);
+    console.log('CPU spent in full cycle:', Game.cpu.getUsed() - startCpu);
 }
 
 console.log("Test");
