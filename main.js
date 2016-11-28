@@ -5,6 +5,9 @@ var spawner = require('worker.spawner');
 
 //This function is run every tick.
 module.exports.loop = function () {
+    //need this to measure how much my script cost
+    var startCpu = Game.getUsedCpu();
+
     //Log so I know things are happening
     console.log();
     console.log(Game.time);
@@ -23,6 +26,8 @@ module.exports.loop = function () {
     if (Game.spawns['Spawn1'].room.safeMode == undefined && Game.spawns['Spawn1'].room.safeModeAvailable) {
         Game.spawns['Spawn1'].room.controller.activateSafeMode
     }
+
+    console.log('CPU spent on Memory parsing:', Game.getUsedCpu() - startCpu);
 }
 
 console.log("Test");

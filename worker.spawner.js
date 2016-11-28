@@ -13,11 +13,6 @@ var spawner = {
         var harvesters = _.filter(Game.creeps, (creep) => creep.memory.role == 'harvester');
         //I want 2 harvesters per energy source, so find available sources
         var sources = myRoom.find(FIND_SOURCES_ACTIVE);
-        console.log("myRoom.memory.lastSource: " +  myRoom.memory.lastSource)
-        console.log("Harvesters " + harvesters.length)
-        console.log("sources.length:" + sources.length)
-        console.log("energy count:" + Game.spawns['Spawn1'].energy)
-        console.log("Should create harvester?:" + harvesters.length < (sources.length * 2) && Game.spawns['Spawn1'].energy >= 200)
         if (harvesters.length < (sources.length * 2) && Game.spawns['Spawn1'].energy >= 200) {
             if (myRoom.memory.lastSource == null) {
                 myRoom.memory.lastSource = 0;
