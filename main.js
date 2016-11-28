@@ -44,3 +44,11 @@ function runRoles() {
         }
     }
 }
+
+
+var usedOnStart = 0;
+usedOnStart = getUsedCpu();
+
+function getUsedCpu() {
+    return Game.rooms.sim ? performance.now() - usedOnStart : Game.getUsedCpu();
+}
